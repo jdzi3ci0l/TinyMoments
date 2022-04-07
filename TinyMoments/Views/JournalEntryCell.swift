@@ -13,6 +13,7 @@ class JournalEntryCell: UITableViewCell {
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var moodImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

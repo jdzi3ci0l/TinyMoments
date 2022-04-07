@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         tableView.register(UINib(nibName: "JournalEntryCell", bundle: nil), forCellReuseIdentifier: "JournalEntryCell")
         entries.append(Entry(date: Date.now, title: "First Day Of My Travel", text: "Today we visited a lot of amazing places and many things happened.", mood: "happy"))
         entries.append(Entry(date: Date.now, title: "My birthday party", text: "Today was my birthday, so I wanted to record the best moments"))
-        entries.append(Entry(date: Date.init(timeIntervalSince1970: 300000), title: "Another Test Entry", text: "I wish I was better at working with UIKit, Autolayout and Constraints. I will get better, I promise!"))
+        entries.append(Entry(date: Date.init(timeIntervalSince1970: 300000), title: "Another Test Entry", text: "I wish I was better at working with UIKit, Autolayout and Constraints. I will get better, I promise!", mood: "cool"))
     }
 }
 
@@ -38,6 +38,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         cell.monthLabel.text = entry.date.monthAsString()
         cell.titleLabel.text = entry.title
         cell.descriptionLabel.text = entry.text
+        if let mood = entry.mood {
+            cell.moodImageView.image = UIImage(named: mood)
+        }
         
         return cell
     }
