@@ -17,6 +17,9 @@ class ViewController: UIViewController {
         tableView.delegate = self
         tableView.register(UINib(nibName: "JournalEntryCell", bundle: nil), forCellReuseIdentifier: "JournalEntryCell")
         entries.append(Entry(date: Date.now, text: "This is a test cell"))
+        entries.append(Entry(date: Date.now, text: "This is a test cell"))
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 600
     }
 }
 
@@ -35,7 +38,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 150
     }
 }
 
