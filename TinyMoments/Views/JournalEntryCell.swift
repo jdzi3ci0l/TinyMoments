@@ -9,11 +9,14 @@ import UIKit
 
 class JournalEntryCell: UITableViewCell {
     
+    @IBOutlet weak var dayLabel: UILabel!
+    @IBOutlet weak var monthLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        self.contentView.layer.cornerRadius = 5
+        self.contentView.layer.cornerRadius = 10
         self.backgroundColor = .clear
         self.layer.shadowOpacity = 0.5
     }

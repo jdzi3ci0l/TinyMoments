@@ -16,10 +16,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.register(UINib(nibName: "JournalEntryCell", bundle: nil), forCellReuseIdentifier: "JournalEntryCell")
-        entries.append(Entry(date: Date.now, text: "This is a test cell"))
-        entries.append(Entry(date: Date.now, text: "This is a test cell"))
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 600
+        entries.append(Entry(date: Date.now, title: "First Day Of My Travel", text: "Today we visited a lot of amazing places and many things happened.", mood: "happy"))
+        entries.append(Entry(date: Date.now, title: "My birthday party", text: "Today was my birthday, so I wanted to record the best moments"))
+        entries.append(Entry(date: Date.init(timeIntervalSince1970: 300000), title: "Another Test Entry", text: "I wish I was better at working with UIKit, Autolayout and Constraints. I will get better, I promise!"))
     }
 }
 
@@ -32,8 +31,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "JournalEntryCell", for: indexPath) as! JournalEntryCell
-//        cell.dateLabel.text = entries[indexPath.row].date.formatted(date: .abbreviated, time: .omitted)
-//        cell.shortTextLabel.text = entries[indexPath.row].text
+        
+        let entry = entries[indexPath.row]
+        
+        cell.dayLabel.text = String(entry.date.day!)
+        cell.monthLabel.text = entry.date.monthAsString()
+        cell.titleLabel.text = entry.title
+        cell.descriptionLabel.text = entry.text
+        
         return cell
     }
     

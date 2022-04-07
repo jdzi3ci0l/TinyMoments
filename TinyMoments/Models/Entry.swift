@@ -9,10 +9,14 @@ import Foundation
 
 class Entry {
     let date: Date
-    var text: String
+    var title: String
+    var text: String = ""
+    var mood: String?
     
-    init(date: Date, text: String) {
+    init(date: Date = Date.now, title: String, text: String, mood: String? = nil) {
         self.date = date
+        self.title = title
         self.text = text
+        self.mood = mood
     }
 }
