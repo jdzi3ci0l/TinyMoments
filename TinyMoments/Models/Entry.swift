@@ -10,10 +10,10 @@ import Foundation
 class Entry {
     let date: Date
     var title: String
-    var text: String = ""
+    var text: String?
     var mood: String?
     
-    init(date: Date = Date.now, title: String, text: String, mood: String? = nil) {
+    init(date: Date = Date.now, title: String, text: String? = nil, mood: String? = nil) {
         self.date = date
         self.title = title
         self.text = text

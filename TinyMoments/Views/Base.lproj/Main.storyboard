@@ -77,6 +77,9 @@
                     <navigationItem key="navigationItem" id="3Uk-Zf-DcT">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="UHf-9X-1Us">
                             <color key="tintColor" red="0.47869408130000002" green="0.4408196211" blue="0.58433103559999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="addButtonPressed:" destination="BYZ-38-t0r" id="hBn-Xa-7sy"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
