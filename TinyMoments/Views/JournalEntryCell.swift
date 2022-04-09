@@ -9,6 +9,10 @@ import UIKit
 
 class JournalEntryCell: UITableViewCell {
     
+    var title: String?
+    var text: String?
+    var mood: String?
+    
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!

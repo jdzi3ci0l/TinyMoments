@@ -9,11 +9,15 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
-    @IBOutlet weak var titleLabel: UITextField!
+    var entry: Entry? = nil
+    
+    @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var moodImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        titleTextField.delegate = self
         
         let gradient = CAGradientLayer()
         gradient.frame = view.bounds
@@ -21,5 +25,26 @@ class DetailViewController: UIViewController {
         view.layer.insertSublayer(gradient, at: 0)
     
         textView.textContainer.lineFragmentPadding = 0
+        
+        titleTextField.text = entry?.title
+        textView.text = entry?.text
+        if let mood = entry?.mood {
+            moodImageView.image = UIImage(named: mood)
+        } else {
+            moodImageView.image = nil
+        }
     }
+}
+
+
+//MARK: - UITextFieldDelegate
+
+extension DetailViewController: UITextFieldDelegate {
+    
+}
+
+//MARK: - UITextViewDelegate
+
+extension DetailViewController: UITextViewDelegate {
+    
 }

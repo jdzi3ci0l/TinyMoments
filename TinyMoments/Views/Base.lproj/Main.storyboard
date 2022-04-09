@@ -101,16 +101,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="Em7-ie-Vgu">
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="Em7-ie-Vgu" userLabel="TitleMoodStackView">
                                 <rect key="frame" x="16" y="88" width="358" height="80"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="First Day Of My Travel" textAlignment="natural" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="Xn4-Ph-Oju">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="First Day Of My Travel" textAlignment="natural" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="Xn4-Ph-Oju" userLabel="TitleTextField">
                                         <rect key="frame" x="0.0" y="51" width="237" height="29"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cool" translatesAutoresizingMaskIntoConstraints="NO" id="dXc-Qk-6sl">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cool" translatesAutoresizingMaskIntoConstraints="NO" id="dXc-Qk-6sl" userLabel="MoodEmoji">
                                         <rect key="frame" x="278" y="0.0" width="80" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="Ywe-8t-dfZ"/>
@@ -143,8 +143,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="TinyMoments" id="cnz-cn-P1c"/>
                     <connections>
+                        <outlet property="moodImageView" destination="dXc-Qk-6sl" id="Sd3-hi-shR"/>
                         <outlet property="textView" destination="5p3-T8-x7c" id="mP3-5W-uwl"/>
-                        <outlet property="titleLabel" destination="Xn4-Ph-Oju" id="utr-bt-MPA"/>
+                        <outlet property="titleTextField" destination="Xn4-Ph-Oju" id="3rI-3p-C62"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wfT-bz-220" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

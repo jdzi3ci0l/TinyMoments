@@ -96,7 +96,10 @@ extension EntriesViewController: UITableViewDelegate, UITableViewDataSource {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "GoToDetail" {
-            
+            let index = tableView.indexPathForSelectedRow!.row
+            let entry = entries[index]
+            let destinationVC = segue.destination as! DetailViewController
+            destinationVC.entry = entry
         }
     }
 }
