@@ -18,11 +18,11 @@ class EntriesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
-        tableView.register(UINib(nibName: "JournalEntryCell", bundle: nil), forCellReuseIdentifier: "JournalEntryCell")
+        tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
     
         navigationController?.navigationBar.titleTextAttributes = [
-            .foregroundColor: #colorLiteral(red: 0.486708045, green: 0.4391390383, blue: 0.5955944061, alpha: 1),
-            .font: UIFont(name: "Pacifico-Regular", size: 17)!
+            .foregroundColor: K.Colors.darkPurple,
+            .font: UIFont(name: K.Fonts.pacifico, size: 17)!
         ]
     }
     
@@ -78,7 +78,7 @@ class EntriesViewController: UIViewController {
     }
 }
 
-//MARK: - UITableViewDelegate, UITableViewDataSource
+//MARK: - UITableViewDelegate, UITableViewDataSource methods
 
 extension EntriesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -90,7 +90,7 @@ extension EntriesViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "JournalEntryCell", for: indexPath) as! JournalEntryCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath) as! JournalEntryCell
         
         let entry = entries[indexPath.row]
         
@@ -108,11 +108,11 @@ extension EntriesViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "GoToDetail", sender: self)
+        performSegue(withIdentifier: K.detailSegue, sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "GoToDetail" {
+        if segue.identifier == K.detailSegue {
             let index = tableView.indexPathForSelectedRow!.row
             let entry = entries[index]
             let destinationVC = segue.destination as! DetailViewController

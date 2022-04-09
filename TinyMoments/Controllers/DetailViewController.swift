@@ -28,7 +28,7 @@ class DetailViewController: UIViewController {
             items.append(
                 UIAction(title: "\(mood.0 ?? "") \(mood.1)", image: nil) {_ in
                     self.entry.mood = mood.0
-                    self.moodChangeButton.setTitle(mood.0 ?? "😶", for: .normal)
+                    self.moodChangeButton.setTitle(mood.0 ?? K.noMoodChosenEmoji, for: .normal)
                     self.moodChangeButton.setImage(mood.0 == nil ? UIImage(named: "plus.circle") : nil, for: .normal)
                     self.moodChangeButton.alpha = mood.0 != nil ? 1.0 : 0.2
                     self.saveData()
@@ -52,9 +52,8 @@ class DetailViewController: UIViewController {
         titleTextField.text = entry.title
         textView.text = entry.text
         
-        moodChangeButton.imageView?.tintColor = #colorLiteral(red: 0.486708045, green: 0.4391390383, blue: 0.5955944061, alpha: 1)
         moodChangeButton.menu = UIMenu(title: "Change mood", image: nil, identifier: nil, options: [], children: moodMenuItems)
-        moodChangeButton.setTitle(entry.mood ?? "😶", for: .normal)
+        moodChangeButton.setTitle(entry.mood ?? K.noMoodChosenEmoji, for: .normal)
         moodChangeButton.alpha = entry.mood == nil ? 0.3 : 1.0
     }
     
@@ -94,7 +93,7 @@ class DetailViewController: UIViewController {
             target: self,
             action: #selector(rightUIBarButtonPressed)
         )
-        navigationItem.rightBarButtonItem?.tintColor = isCurrentlyEditing ? #colorLiteral(red: 0.486708045, green: 0.4391390383, blue: 0.5955944061, alpha: 1) : .red
+        navigationItem.rightBarButtonItem?.tintColor = isCurrentlyEditing ? K.Colors.darkPurple : .red
     }
 }
 

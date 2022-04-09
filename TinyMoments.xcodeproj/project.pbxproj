@@ -20,6 +20,7 @@
 		34486E8627FF9D8A004BED28 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34486E8527FF9D8A004BED28 /* DateExtensions.swift */; };
 		349334652801826900709C13 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349334642801826900709C13 /* DetailViewController.swift */; };
 		349334682801A77C00709C13 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 349334662801A77C00709C13 /* DataModel.xcdatamodeld */; };
+		34C65F9F2801EF550033E123 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C65F9E2801EF550033E123 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		34486E8527FF9D8A004BED28 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		349334642801826900709C13 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		349334672801A77C00709C13 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		34C65F9E2801EF550033E123 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				3425368427FDD70400EA8205 /* Fonts */,
 				3425366D27FDD55A00EA8205 /* AppDelegate.swift */,
 				3425366F27FDD55A00EA8205 /* SceneDelegate.swift */,
+				34C65F9E2801EF550033E123 /* Constants.swift */,
 				3425367927FDD55C00EA8205 /* Assets.xcassets */,
 				3425367B27FDD55C00EA8205 /* LaunchScreen.storyboard */,
 				3425367E27FDD55C00EA8205 /* Info.plist */,
@@ -209,6 +212,7 @@
 				349334682801A77C00709C13 /* DataModel.xcdatamodeld in Sources */,
 				3425367827FDD55A00EA8205 /* TinyMoments.xcdatamodeld in Sources */,
 				349334652801826900709C13 /* DetailViewController.swift in Sources */,
+				34C65F9F2801EF550033E123 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
