@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		3425366E27FDD55A00EA8205 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3425366D27FDD55A00EA8205 /* AppDelegate.swift */; };
 		3425367027FDD55A00EA8205 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3425366F27FDD55A00EA8205 /* SceneDelegate.swift */; };
-		3425367227FDD55A00EA8205 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3425367127FDD55A00EA8205 /* ViewController.swift */; };
+		3425367227FDD55A00EA8205 /* EntriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3425367127FDD55A00EA8205 /* EntriesViewController.swift */; };
 		3425367527FDD55A00EA8205 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3425367327FDD55A00EA8205 /* Main.storyboard */; };
 		3425367827FDD55A00EA8205 /* TinyMoments.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3425367627FDD55A00EA8205 /* TinyMoments.xcdatamodeld */; };
 		3425367A27FDD55C00EA8205 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3425367927FDD55C00EA8205 /* Assets.xcassets */; };
@@ -19,13 +19,14 @@
 		3425368B27FDDC4000EA8205 /* JournalEntryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3425368927FDDC4000EA8205 /* JournalEntryCell.xib */; };
 		3425369127FDE09500EA8205 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3425369027FDE09500EA8205 /* Entry.swift */; };
 		34486E8627FF9D8A004BED28 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34486E8527FF9D8A004BED28 /* DateExtensions.swift */; };
+		349334652801826900709C13 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349334642801826900709C13 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3425366A27FDD55A00EA8205 /* TinyMoments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinyMoments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3425366D27FDD55A00EA8205 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3425366F27FDD55A00EA8205 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3425367127FDD55A00EA8205 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3425367127FDD55A00EA8205 /* EntriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesViewController.swift; sourceTree = "<group>"; };
 		3425367427FDD55A00EA8205 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3425367727FDD55A00EA8205 /* TinyMoments.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TinyMoments.xcdatamodel; sourceTree = "<group>"; };
 		3425367927FDD55C00EA8205 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -36,6 +37,7 @@
 		3425368927FDDC4000EA8205 /* JournalEntryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JournalEntryCell.xib; sourceTree = "<group>"; };
 		3425369027FDE09500EA8205 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		34486E8527FF9D8A004BED28 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
+		349334642801826900709C13 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +114,8 @@
 		3425368E27FDE05600EA8205 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				3425367127FDD55A00EA8205 /* ViewController.swift */,
+				3425367127FDD55A00EA8205 /* EntriesViewController.swift */,
+				349334642801826900709C13 /* DetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -200,11 +203,12 @@
 			files = (
 				34486E8627FF9D8A004BED28 /* DateExtensions.swift in Sources */,
 				3425369127FDE09500EA8205 /* Entry.swift in Sources */,
-				3425367227FDD55A00EA8205 /* ViewController.swift in Sources */,
+				3425367227FDD55A00EA8205 /* EntriesViewController.swift in Sources */,
 				3425368A27FDDC4000EA8205 /* JournalEntryCell.swift in Sources */,
 				3425366E27FDD55A00EA8205 /* AppDelegate.swift in Sources */,
 				3425367027FDD55A00EA8205 /* SceneDelegate.swift in Sources */,
 				3425367827FDD55A00EA8205 /* TinyMoments.xcdatamodeld in Sources */,
+				349334652801826900709C13 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,8 +19,8 @@
                     <stackView opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Hyy-OA-Lou" userLabel="DateMoodStack">
                         <rect key="frame" x="16" y="8" width="80.666666666666671" height="134"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="lastBaseline" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Z1u-Ei-RNa" userLabel="DateStackView">
-                                <rect key="frame" x="9.3333333333333321" y="0.0" width="61.666666666666671" height="71"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="lastBaseline" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Z1u-Ei-RNa" userLabel="DateStackView">
+                                <rect key="frame" x="10.333333333333329" y="0.0" width="60" height="71"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JD3-pQ-6fj" userLabel="DayLabel">
                                         <rect key="frame" x="0.0" y="0.0" width="25.333333333333332" height="48"/>
@@ -28,8 +28,8 @@
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sep" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mF1-wW-dm1" userLabel="MonthLabel">
-                                        <rect key="frame" x="26.333333333333332" y="19" width="35.333333333333343" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mF1-wW-dm1" userLabel="MonthLabel">
+                                        <rect key="frame" x="27.333333333333332" y="19" width="32.666666666666671" height="24"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>

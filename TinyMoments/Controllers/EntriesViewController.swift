@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  EntriesViewController.swift
 //  TinyMoments
 //
 //  Created by Janusz on 06/04/2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class EntriesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var entries = [Entry]()
@@ -17,8 +17,14 @@ class ViewController: UIViewController {
         tableView.delegate = self
         tableView.register(UINib(nibName: "JournalEntryCell", bundle: nil), forCellReuseIdentifier: "JournalEntryCell")
         entries.append(Entry(title: "First Day Of My Travel", text: "Today we visited a lot of amazing places and many things happened.", mood: "happy"))
-        entries.append(Entry(title: "My birthday party", text: "Today was my birthday, so I wanted to record the best moments"))
+        entries.append(Entry(title: "My birthday party", text: "Today was my birthday, so I wanted to record the best moments", mood: "party"))
         entries.append(Entry(date: Date.init(timeIntervalSince1970: 300000), title: "Another Test Entry", text: "I wish I was better at working with UIKit, Autolayout and Constraints. I will get better, I promise!", mood: "cool"))
+        
+        
+        navigationController?.navigationBar.titleTextAttributes = [
+            .foregroundColor: #colorLiteral(red: 0.486708045, green: 0.4391390383, blue: 0.5955944061, alpha: 1),
+            .font: UIFont(name: "Pacifico-Regular", size: 17)!
+        ]
     }
     
     func saveEntries() {
@@ -57,9 +63,13 @@ class ViewController: UIViewController {
 
 //MARK: - UITableViewDelegate, UITableViewDataSource
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
+extension EntriesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return entries.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -80,8 +90,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "GoToDetail", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "GoToDetail" {
+            
+        }
     }
 }
 
