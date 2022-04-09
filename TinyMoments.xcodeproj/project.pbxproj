@@ -17,9 +17,9 @@
 		3425368727FDD81D00EA8205 /* Pacifico-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3425368627FDD81D00EA8205 /* Pacifico-Regular.ttf */; };
 		3425368A27FDDC4000EA8205 /* JournalEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3425368827FDDC4000EA8205 /* JournalEntryCell.swift */; };
 		3425368B27FDDC4000EA8205 /* JournalEntryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3425368927FDDC4000EA8205 /* JournalEntryCell.xib */; };
-		3425369127FDE09500EA8205 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3425369027FDE09500EA8205 /* Entry.swift */; };
 		34486E8627FF9D8A004BED28 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34486E8527FF9D8A004BED28 /* DateExtensions.swift */; };
 		349334652801826900709C13 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349334642801826900709C13 /* DetailViewController.swift */; };
+		349334682801A77C00709C13 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 349334662801A77C00709C13 /* DataModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,9 +35,9 @@
 		3425368627FDD81D00EA8205 /* Pacifico-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pacifico-Regular.ttf"; path = "../../../../../../Downloads/Pacifico/Pacifico-Regular.ttf"; sourceTree = "<group>"; };
 		3425368827FDDC4000EA8205 /* JournalEntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryCell.swift; sourceTree = "<group>"; };
 		3425368927FDDC4000EA8205 /* JournalEntryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JournalEntryCell.xib; sourceTree = "<group>"; };
-		3425369027FDE09500EA8205 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		34486E8527FF9D8A004BED28 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		349334642801826900709C13 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		349334672801A77C00709C13 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +96,7 @@
 		3425368C27FDE04700EA8205 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				3425369027FDE09500EA8205 /* Entry.swift */,
+				349334662801A77C00709C13 /* DataModel.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -202,11 +202,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				34486E8627FF9D8A004BED28 /* DateExtensions.swift in Sources */,
-				3425369127FDE09500EA8205 /* Entry.swift in Sources */,
 				3425367227FDD55A00EA8205 /* EntriesViewController.swift in Sources */,
 				3425368A27FDDC4000EA8205 /* JournalEntryCell.swift in Sources */,
 				3425366E27FDD55A00EA8205 /* AppDelegate.swift in Sources */,
 				3425367027FDD55A00EA8205 /* SceneDelegate.swift in Sources */,
+				349334682801A77C00709C13 /* DataModel.xcdatamodeld in Sources */,
 				3425367827FDD55A00EA8205 /* TinyMoments.xcdatamodeld in Sources */,
 				349334652801826900709C13 /* DetailViewController.swift in Sources */,
 			);
@@ -437,6 +437,16 @@
 			);
 			currentVersion = 3425367727FDD55A00EA8205 /* TinyMoments.xcdatamodel */;
 			path = TinyMoments.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		349334662801A77C00709C13 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				349334672801A77C00709C13 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 349334672801A77C00709C13 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

@@ -9,7 +9,9 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
-    var entry: Entry? = nil
+    var entry: Entry!
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var textView: UITextView!
@@ -17,7 +19,7 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleTextField.delegate = self
+        textView.delegate = self
         
         let gradient = CAGradientLayer()
         gradient.frame = view.bounds
@@ -26,25 +28,37 @@ class DetailViewController: UIViewController {
     
         textView.textContainer.lineFragmentPadding = 0
         
-        titleTextField.text = entry?.title
-        textView.text = entry?.text
-        if let mood = entry?.mood {
+        titleTextField.text = entry.title
+        textView.text = entry.text
+        if let mood = entry.mood {
             moodImageView.image = UIImage(named: mood)
+            moodImageView.alpha = 1.0
         } else {
-            moodImageView.image = nil
+            moodImageView.image = UIImage(systemName: "plus.circle")
+            moodImageView.alpha = 0.3
         }
     }
-}
-
-
-//MARK: - UITextFieldDelegate
-
-extension DetailViewController: UITextFieldDelegate {
     
+    func saveEntry() {
+        do {
+            try context.save()
+        } catch {
+            print("Error saving entry: \(error.localizedDescription)")
+        }
+    }
+    
+    
+    @IBAction func textFieldDidChange(_ sender: UITextField) {
+        entry.title = titleTextField.text
+        saveEntry()
+    }
 }
 
 //MARK: - UITextViewDelegate
 
 extension DetailViewController: UITextViewDelegate {
-    
+    func textViewDidChange(_ textView: UITextView) {
+        entry.text = textView.text
+        saveEntry()
+    }
 }

@@ -6,34 +6,47 @@
 //
 
 import UIKit
+import CoreData
 
 class EntriesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var entries = [Entry]()
     
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.register(UINib(nibName: "JournalEntryCell", bundle: nil), forCellReuseIdentifier: "JournalEntryCell")
-        entries.append(Entry(title: "First Day Of My Travel", text: "Today we visited a lot of amazing places and many things happened.", mood: "happy"))
-        entries.append(Entry(title: "My birthday party", text: "Today was my birthday, so I wanted to record the best moments", mood: "party"))
-        entries.append(Entry(date: Date.init(timeIntervalSince1970: 300000), title: "Another Test Entry", text: "I wish I was better at working with UIKit, Autolayout and Constraints. I will get better, I promise!", mood: "cool"))
-        
-        
+    
         navigationController?.navigationBar.titleTextAttributes = [
             .foregroundColor: #colorLiteral(red: 0.486708045, green: 0.4391390383, blue: 0.5955944061, alpha: 1),
             .font: UIFont(name: "Pacifico-Regular", size: 17)!
         ]
+        loadEntries()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
     }
     
     func saveEntries() {
-        //Saving entries
+        do {
+            try context.save()
+        } catch {
+            print("Error saving entries: \(error.localizedDescription)")
+        }
         tableView.reloadData()
     }
     
     func loadEntries() {
-        //Loading entries
+        let request: NSFetchRequest<Entry> = Entry.fetchRequest()
+        do {
+        entries = try context.fetch(request)
+        } catch {
+            print("Error loading entries: \(error.localizedDescription)")
+        }
         tableView.reloadData()
     }
     
@@ -45,9 +58,12 @@ class EntriesViewController: UIViewController {
         }
         
         let addAction = UIAlertAction(title: "Add", style: .default) { _ in
-            let text = alert.textFields!.first!.text ?? ""
-            if !text.isEmpty {
-                let newEntry = Entry(title: text)
+            let title = alert.textFields!.first!.text ?? ""
+            if !title.isEmpty {
+                let newEntry = Entry(context: self.context)
+                newEntry.date = Date.now
+                newEntry.title = title
+                
                 self.entries.append(newEntry)
                 self.saveEntries()
             }
@@ -77,8 +93,8 @@ extension EntriesViewController: UITableViewDelegate, UITableViewDataSource {
         
         let entry = entries[indexPath.row]
         
-        cell.dayLabel.text = String(entry.date.day!)
-        cell.monthLabel.text = entry.date.monthAsString()
+        cell.dayLabel.text = String(entry.date!.day!)
+        cell.monthLabel.text = entry.date!.monthAsString()
         cell.titleLabel.text = entry.title
         cell.descriptionLabel.text = entry.text
         if let mood = entry.mood {
