@@ -24,10 +24,10 @@ class EntriesViewController: UIViewController {
             .foregroundColor: #colorLiteral(red: 0.486708045, green: 0.4391390383, blue: 0.5955944061, alpha: 1),
             .font: UIFont(name: "Pacifico-Regular", size: 17)!
         ]
-        loadEntries()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        loadEntries()
         tableView.reloadData()
     }
     

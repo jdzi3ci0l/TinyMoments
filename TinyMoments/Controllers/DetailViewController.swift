@@ -39,7 +39,7 @@ class DetailViewController: UIViewController {
         }
     }
     
-    func saveEntry() {
+    func saveData() {
         do {
             try context.save()
         } catch {
@@ -47,10 +47,26 @@ class DetailViewController: UIViewController {
         }
     }
     
+    @IBAction func deleteButtonPressed(_ sender: UIBarButtonItem) {
+        let alert = UIAlertController(title: "Delete Entry?", message: "This entry will be permanently deleted.", preferredStyle: .alert)
+        
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { _ in
+            self.context.delete(self.entry)
+            self.saveData()
+            self.navigationController?.popViewController(animated: true)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        alert.addAction(deleteAction)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true, completion: nil)
+    }
     
     @IBAction func textFieldDidChange(_ sender: UITextField) {
         entry.title = titleTextField.text
-        saveEntry()
+        saveData()
     }
 }
 
@@ -59,6 +75,6 @@ class DetailViewController: UIViewController {
 extension DetailViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         entry.text = textView.text
-        saveEntry()
+        saveData()
     }
 }

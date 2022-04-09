@@ -102,7 +102,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="Em7-ie-Vgu" userLabel="TitleMoodStackView">
-                                <rect key="frame" x="16" y="88" width="358" height="80"/>
+                                <rect key="frame" x="16" y="96" width="358" height="80"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="First Day Of My Travel" textAlignment="natural" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="Xn4-Ph-Oju" userLabel="TitleTextField">
                                         <rect key="frame" x="0.0" y="51" width="237" height="29"/>
@@ -125,7 +125,7 @@
                                 </subviews>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5p3-T8-x7c">
-                                <rect key="frame" x="16" y="176" width="358" height="652"/>
+                                <rect key="frame" x="16" y="184" width="358" height="644"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -142,11 +142,18 @@
                             <constraint firstAttribute="bottom" secondItem="5p3-T8-x7c" secondAttribute="bottom" constant="16" id="Lga-Pk-wgf"/>
                             <constraint firstItem="gks-nx-6f8" firstAttribute="trailing" secondItem="Em7-ie-Vgu" secondAttribute="trailing" constant="16" id="SHI-8F-v8f"/>
                             <constraint firstItem="gks-nx-6f8" firstAttribute="trailing" secondItem="5p3-T8-x7c" secondAttribute="trailing" constant="16" id="Z90-02-7Ul"/>
-                            <constraint firstItem="Em7-ie-Vgu" firstAttribute="top" secondItem="6fR-P9-EDw" secondAttribute="topMargin" id="cUC-H2-PDX"/>
+                            <constraint firstItem="Em7-ie-Vgu" firstAttribute="top" secondItem="6fR-P9-EDw" secondAttribute="topMargin" constant="8" id="cUC-H2-PDX"/>
                             <constraint firstItem="5p3-T8-x7c" firstAttribute="leading" secondItem="gks-nx-6f8" secondAttribute="leading" constant="16" id="mUq-fT-riE"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="TinyMoments" id="cnz-cn-P1c"/>
+                    <navigationItem key="navigationItem" title="TinyMoments" id="cnz-cn-P1c">
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="oHO-vi-A9K">
+                            <color key="tintColor" systemColor="systemRedColor"/>
+                            <connections>
+                                <action selector="deleteButtonPressed:" destination="kMG-Mp-OXC" id="WtZ-Pk-0wi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="moodImageView" destination="dXc-Qk-6sl" id="Sd3-hi-shR"/>
                         <outlet property="textView" destination="5p3-T8-x7c" id="mP3-5W-uwl"/>
@@ -185,6 +192,9 @@
         <image name="cool" width="530" height="532"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
