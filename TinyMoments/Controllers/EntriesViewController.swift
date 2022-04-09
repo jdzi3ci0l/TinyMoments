@@ -42,6 +42,7 @@ class EntriesViewController: UIViewController {
     
     func loadEntries() {
         let request: NSFetchRequest<Entry> = Entry.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
         do {
         entries = try context.fetch(request)
         } catch {
@@ -64,7 +65,7 @@ class EntriesViewController: UIViewController {
                 newEntry.date = Date.now
                 newEntry.title = title
                 
-                self.entries.append(newEntry)
+                self.entries.insert(newEntry, at: 0)
                 self.saveEntries()
             }
         }
@@ -98,9 +99,9 @@ extension EntriesViewController: UITableViewDelegate, UITableViewDataSource {
         cell.titleLabel.text = entry.title
         cell.descriptionLabel.text = entry.text
         if let mood = entry.mood {
-            cell.moodImageView.image = UIImage(named: mood)
+            cell.moodEmoji.text = mood
         } else {
-            cell.moodImageView.image = nil
+            cell.moodEmoji.text = nil
         }
         
         return cell

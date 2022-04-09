@@ -114,14 +114,18 @@
                                             <action selector="textFieldDidChange:" destination="kMG-Mp-OXC" eventType="editingChanged" id="kCj-bw-qpY"/>
                                         </connections>
                                     </textField>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cool" translatesAutoresizingMaskIntoConstraints="NO" id="dXc-Qk-6sl" userLabel="MoodEmoji">
+                                    <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Tl-oQ-dPQ">
                                         <rect key="frame" x="278" y="0.0" width="80" height="80"/>
-                                        <color key="tintColor" red="0.47869408130000002" green="0.4408196211" blue="0.58433103559999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="80" id="Ywe-8t-dfZ"/>
-                                            <constraint firstAttribute="width" constant="80" id="l8Z-ja-wFo"/>
+                                            <constraint firstAttribute="width" constant="80" id="V7b-IH-XwP"/>
+                                            <constraint firstAttribute="height" constant="80" id="wWV-Y5-vbr"/>
                                         </constraints>
-                                    </imageView>
+                                        <fontDescription key="fontDescription" type="system" pointSize="55"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5p3-T8-x7c">
@@ -155,7 +159,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="moodImageView" destination="dXc-Qk-6sl" id="Sd3-hi-shR"/>
+                        <outlet property="moodChangeButton" destination="3Tl-oQ-dPQ" id="0La-oW-tix"/>
                         <outlet property="textView" destination="5p3-T8-x7c" id="mP3-5W-uwl"/>
                         <outlet property="titleTextField" destination="Xn4-Ph-Oju" id="3rI-3p-C62"/>
                     </connections>
@@ -189,7 +193,6 @@
     </scenes>
     <resources>
         <image name="background" width="555" height="1200"/>
-        <image name="cool" width="530" height="532"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
