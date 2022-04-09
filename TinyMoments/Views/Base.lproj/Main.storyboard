@@ -135,6 +135,7 @@
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
                             </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gks-nx-6f8"/>
@@ -154,7 +155,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="oHO-vi-A9K">
                             <color key="tintColor" systemColor="systemRedColor"/>
                             <connections>
-                                <action selector="deleteButtonPressed:" destination="kMG-Mp-OXC" id="WtZ-Pk-0wi"/>
+                                <action selector="rightUIBarButtonPressed:" destination="kMG-Mp-OXC" id="Jie-vP-KE4"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
