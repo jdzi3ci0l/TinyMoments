@@ -9,6 +9,9 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+    @IBOutlet weak var titleLabel: UITextField!
+    @IBOutlet weak var textView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -17,6 +20,6 @@ class DetailViewController: UIViewController {
         gradient.colors = [#colorLiteral(red: 0.8518229127, green: 0.8488650322, blue: 0.99630481, alpha: 1).cgColor, #colorLiteral(red: 0.9804552197, green: 0.8359815478, blue: 0.9779635072, alpha: 1).cgColor, #colorLiteral(red: 0.9792258143, green: 0.6606447101, blue: 0.681139946, alpha: 1).cgColor, #colorLiteral(red: 0.7292762399, green: 0.6618252397, blue: 0.8362961411, alpha: 1).cgColor]
         view.layer.insertSublayer(gradient, at: 0)
     
-        
+        textView.textContainer.lineFragmentPadding = 0
     }
 }

@@ -101,18 +101,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First Day of My Travel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mT6-6z-9aj">
-                                <rect key="frame" x="16" y="88" width="358" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="Em7-ie-Vgu">
+                                <rect key="frame" x="16" y="88" width="358" height="80"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="First Day Of My Travel" textAlignment="natural" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="Xn4-Ph-Oju">
+                                        <rect key="frame" x="0.0" y="51" width="237" height="29"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cool" translatesAutoresizingMaskIntoConstraints="NO" id="dXc-Qk-6sl">
+                                        <rect key="frame" x="278" y="0.0" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="Ywe-8t-dfZ"/>
+                                            <constraint firstAttribute="width" constant="80" id="l8Z-ja-wFo"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5p3-T8-x7c">
+                                <rect key="frame" x="16" y="176" width="358" height="652"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gks-nx-6f8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Em7-ie-Vgu" firstAttribute="leading" secondItem="gks-nx-6f8" secondAttribute="leading" constant="16" id="9P6-14-t6G"/>
+                            <constraint firstItem="5p3-T8-x7c" firstAttribute="top" secondItem="Em7-ie-Vgu" secondAttribute="bottom" constant="8" id="FH5-hm-Gte"/>
+                            <constraint firstItem="5p3-T8-x7c" firstAttribute="top" secondItem="Em7-ie-Vgu" secondAttribute="bottom" constant="8" symbolic="YES" id="I9I-Or-4gi"/>
+                            <constraint firstAttribute="bottom" secondItem="5p3-T8-x7c" secondAttribute="bottom" constant="16" id="Lga-Pk-wgf"/>
+                            <constraint firstItem="gks-nx-6f8" firstAttribute="trailing" secondItem="Em7-ie-Vgu" secondAttribute="trailing" constant="16" id="SHI-8F-v8f"/>
+                            <constraint firstItem="gks-nx-6f8" firstAttribute="trailing" secondItem="5p3-T8-x7c" secondAttribute="trailing" constant="16" id="Z90-02-7Ul"/>
+                            <constraint firstItem="Em7-ie-Vgu" firstAttribute="top" secondItem="6fR-P9-EDw" secondAttribute="topMargin" id="cUC-H2-PDX"/>
+                            <constraint firstItem="5p3-T8-x7c" firstAttribute="leading" secondItem="gks-nx-6f8" secondAttribute="leading" constant="16" id="mUq-fT-riE"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="TinyMoments" id="cnz-cn-P1c"/>
+                    <connections>
+                        <outlet property="textView" destination="5p3-T8-x7c" id="mP3-5W-uwl"/>
+                        <outlet property="titleLabel" destination="Xn4-Ph-Oju" id="utr-bt-MPA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wfT-bz-220" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -126,6 +159,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="UE9-w9-qT2">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.47869408130000002" green="0.4408196211" blue="0.58433103559999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.47869408130000002" green="0.4408196211" blue="0.58433103559999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -139,6 +176,10 @@
     </scenes>
     <resources>
         <image name="background" width="555" height="1200"/>
+        <image name="cool" width="530" height="532"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
