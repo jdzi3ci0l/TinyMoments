@@ -29,7 +29,6 @@ class DetailViewController: UIViewController {
                 UIAction(title: "\(mood.0 ?? "") \(mood.1)", image: nil) {_ in
                     self.entry.mood = mood.0
                     self.moodChangeButton.setTitle(mood.0 ?? K.noMoodChosenEmoji, for: .normal)
-                    self.moodChangeButton.setImage(mood.0 == nil ? UIImage(named: "plus.circle") : nil, for: .normal)
                     self.moodChangeButton.alpha = mood.0 != nil ? 1.0 : 0.2
                     self.saveData()
                 })
